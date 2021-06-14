@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.sound.midi.Track;
+
 
 public class Stain {
 	private List<Map<String, String>> tracks;
@@ -20,9 +20,9 @@ public class Stain {
 
 	public Stain(Playlist playlist) {
 		tracks = new ArrayList<>();
-		for (Track track : playlist.getTracks()) {
+		for (br.edu.insper.desagil.backend.model.Track track : playlist.getTracks()) {
 			Map<String, String> map = new HashMap<>();
-			map.put("performer", track.getPerformerName());
+			map.put("performer", track.getFullArtistName());
 			map.put("name", track.getName());
 			map.put("duration", track.getDurationString());
 			tracks.add(map);
