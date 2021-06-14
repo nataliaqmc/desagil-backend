@@ -1,7 +1,5 @@
 package br.edu.insper.desagil.backend.model;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Track {
 	private Artist artist;
@@ -26,12 +24,18 @@ public class Track {
 	public String getDurationString() {
 		String duracao = null;
 		double secToMin;
-		List<Double> lista = new ArrayList<>();
 		secToMin = duration/60;
-		lista.add(secToMin);
-		duracao = lista.toString();
-							
-		return duracao;
+		int i = (int) secToMin;
+		double d = secToMin - i;
+		if (d == 0.0) {
+			duracao = i + ":" + "00";
+			return duracao;
+		}
+		else{
+			duracao = i + ":" + (int)d*100;				
+			return duracao;
+		}
+		
 	}
 	public String getFullArtistName() {
 		return null;

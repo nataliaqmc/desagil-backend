@@ -11,7 +11,7 @@ public class Playlist {
 	private Map<String, Integer> ratings;
 	
 	
-	public Playlist(int id, List<Track> tracks,  Map<String, Integer> ratings) {
+	public Playlist(int id) {
 		super();
 		this.id = id;
 		this.tracks = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Playlist {
 	public void addTrack(Track track) {
 		tracks.add(track);
 	}
-	public void putRaiting(String nomeUser, Integer avaliacao) {
+	public void putRating(String nomeUser, Integer avaliacao) {
 		ratings.put(nomeUser, avaliacao);
 	}
 	public double averageRatings() {

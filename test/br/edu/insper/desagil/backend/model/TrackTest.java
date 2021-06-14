@@ -6,62 +6,67 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TrackTest {
+	private Track track;
+	private Artist artist;
 	@BeforeEach
 	void setUp() {
 	}
 
 	@Test
 	void testZeroSeconds() {
-		assertEquals(true, false);
+		track = new Track(artist, "x", 0);
+		assertEquals("0:00", track.getDurationString());
 	}
 
 	@Test
 	void testFiveSeconds() {
-		assertEquals(true, false);
+		track = new Track(artist, "x", 5);
+		assertEquals("0:05", track.getDurationString());
 	}
 
 	@Test
 	void testTwentyFiveSeconds() {
-		assertEquals(true, false);
+		track = new Track(artist, "x", 25);
+		assertEquals("0:25", track.getDurationString());
 	}
 
 	@Test
 	void testOneMinuteZeroSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 60);
+		assertEquals("1:00", track.getDurationString());	}
 
 	@Test
 	void testOneMinuteFiveSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 65);
+		assertEquals("1:05", track.getDurationString());	}
 
 	@Test
 	void testOneMinuteTwentyFiveSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 85);
+		assertEquals("1:25", track.getDurationString());	}
 
 	@Test
 	void testTwoMinutesZeroSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 120);
+		assertEquals("2:00", track.getDurationString());	}
 
 	@Test
 	void testTwoMinutesFiveSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 125);
+		assertEquals("2:05", track.getDurationString());	}
 
 	@Test
 	void testTwoMinutesTwentyFiveSeconds() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 145);
+		assertEquals("2:25", track.getDurationString());	}
 
 	@Test
 	void testOneCollaborator() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 0);
+		assertEquals(0.0, track.getDurationString());	}
 
 	@Test
 	void testTwoCollaborators() {
-		assertEquals(true, false);
-	}
+		track = new Track(artist, "x", 0);
+		assertEquals(0.0, track.getDurationString());	}
 }
